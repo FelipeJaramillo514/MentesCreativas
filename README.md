@@ -211,40 +211,145 @@ integracion_continua/
 
 ## 🧪 Pruebas Unitarias y Calidad de Código
 
-El proyecto implementa una estrategia completa de testing con **Jest 30** y **React Testing Library 16**:
+El proyecto implementa una estrategia completa de testing con **Jest 30** y **React Testing Library 16** para garantizar la calidad, estabilidad y correcto funcionamiento de la aplicación educativa.
 
-### Componentes Testeados
-- ✅ **HomePage.test.tsx**: Renderizado de tarjetas, navegación y animaciones
-- ✅ **GeografiaView.test.tsx**: Mapa 3D, Canvas, OrbitControls y departamentos
-- ✅ **TecnologiaView.test.tsx**: Constructor de bloques, robot y comandos
-- ✅ **ArteView.test.tsx**: Herramientas de pintura, escultura y controles
-- ✅ **ClickCounter.test.tsx**: Incremento y decremento de contador
-- ✅ **TodoList.test.tsx**: Agregar, completar y eliminar tareas
-- ✅ **PasswordValidator.test.tsx**: Validaciones de seguridad
-- ✅ **UnitConverter.test.tsx**: Conversiones de unidades
-- ✅ **MultiplicationTable.test.tsx**: Generación de tablas
-- ✅ **Navbar.test.tsx**: Enlaces de navegación
+### 🎯 ¿Por qué implementamos pruebas?
 
-### Ejecutar Pruebas
+1. **Garantía de Calidad**: Asegurar que cada funcionalidad opere según lo esperado
+2. **Detección Temprana de Errores**: Identificar bugs antes de que lleguen a producción
+3. **Confianza en Refactorización**: Modificar código sin romper funcionalidades existentes
+4. **Documentación Viva**: Las pruebas sirven como ejemplos de uso de componentes
+5. **Cumplimiento ISO/IEC 25010**: Estándares de calidad de software educativo
+6. **Integración Continua**: Validación automatizada en cada commit
+7. **Experiencia de Usuario**: Garantizar que los estudiantes tengan una experiencia libre de errores
+
+### 📋 Suite Completa de Pruebas
+
+#### **Pruebas de Vistas Principales**
+
+**`App.test.tsx`**
+- ✅ Verifica que la aplicación raíz renderice correctamente
+- ✅ Comprueba la presencia del título "Colegio Mentes Creativas"
+- 🎯 **Propósito**: Garantizar que el punto de entrada de la app funcione
+
+**`HomePage.test.tsx`**
+- ✅ Renderizado del título principal y mensaje motivacional
+- ✅ Verificación de las 3 tarjetas educativas (Geografía, Tecnología, Arte)
+- ✅ Validación de navegación con React Router
+- 🎯 **Propósito**: Asegurar que la página de inicio muestre todas las opciones de navegación
+
+**`GeografiaView.test.tsx`**
+- ✅ Renderizado del título "Mapa Interactivo de Colombia"
+- ✅ Verificación de instrucciones de uso para estudiantes
+- ✅ Comprobación de controles interactivos (Arrastrar, Scroll, Click)
+- ✅ Mock de Canvas 3D de React Three Fiber
+- 🎯 **Propósito**: Validar la interfaz del mapa 3D sin necesidad de WebGL real
+
+**`TecnologiaView.test.tsx`**
+- ✅ Renderizado de título y descripción de la sección
+- ✅ Verificación de pestañas "Constructor 3D" y "Robot Programable"
+- ✅ Comprobación de Canvas 3D para bloques y robot
+- 🎯 **Propósito**: Garantizar que ambas herramientas de pensamiento lógico se carguen
+
+**`ArteView.test.tsx`**
+- ✅ Renderizado de título y descripción de arte
+- ✅ Verificación de pestañas "Pintura 3D" y "Escultura Digital"
+- ✅ Comprobación de Canvas 3D para herramientas creativas
+- 🎯 **Propósito**: Asegurar que las herramientas de arte 3D estén disponibles
+
+#### **Pruebas de Componentes Interactivos**
+
+**`ClickCounter.test.tsx`**
+- ✅ Persistencia en localStorage (guarda el contador al cerrar)
+- ✅ Incremento correcto del contador al hacer clic
+- ✅ Recuperación de valores previos al recargar
+- 🎯 **Propósito**: Validar la funcionalidad de almacenamiento local para seguimiento de progreso
+
+**`TodoList.test.tsx`**
+- ✅ Agregar tareas correctamente a la lista
+- ✅ Eliminar tareas específicas
+- ✅ Prevención de agregar tareas vacías
+- ✅ Manejo de múltiples tareas simultáneas
+- 🎯 **Propósito**: Asegurar que los estudiantes puedan gestionar sus actividades sin errores
+
+**`PasswordValidator.test.tsx`**
+- ✅ Mostrar requisitos iniciales como no cumplidos (❌)
+- ✅ Validar longitud mínima de 8 caracteres
+- ✅ Detectar presencia de números
+- ✅ Verificar letras mayúsculas
+- ✅ Retroalimentación visual en tiempo real (✔️)
+- 🎯 **Propósito**: Enseñar a los estudiantes sobre seguridad digital de forma interactiva
+
+**`MultiplicationTable.test.tsx`**
+- ✅ Generación correcta de tablas de multiplicar (1-10)
+- ✅ Validación de resultados matemáticos exactos
+- ✅ Prevención de generación con input vacío
+- ✅ Limpieza de tabla anterior al generar nueva
+- 🎯 **Propósito**: Garantizar precisión matemática en herramienta educativa
+
+**`UnitConverter.test.tsx`**
+- ✅ Conversión precisa entre unidades (metros, kilómetros, millas)
+- ✅ Manejo de valores decimales
+- ✅ Validación de cálculos matemáticos
+- 🎯 **Propósito**: Asegurar precisión en conversiones para aprendizaje científico
+
+**`Navbar.test.tsx`**
+- ✅ Renderizado de todos los enlaces de navegación
+- ✅ Verificación de rutas correctas
+- ✅ Presencia del logo/nombre del colegio
+- 🎯 **Propósito**: Garantizar navegación funcional en toda la aplicación
+
+### 🚀 Ejecutar Pruebas
+
 ```bash
-# Ejecutar todas las pruebas
+# Ejecutar todas las pruebas (suite completa)
 npm test
 
-# Ejecutar con cobertura de código
+# Ejecutar con cobertura de código detallada
 npm test -- --coverage
 
-# Modo watch (desarrollo)
+# Modo watch para desarrollo (re-ejecuta al guardar cambios)
 npm test -- --watch
 
-# Ejecutar pruebas específicas
+# Ejecutar pruebas específicas por nombre
 npm test HomePage
+npm test ClickCounter
+npm test GeografiaView
+
+# Ejecutar pruebas en modo verbose (salida detallada)
+npm test -- --verbose
+
+# Ejecutar solo pruebas que fallaron
+npm test -- --onlyFailures
 ```
 
-### Métricas de Calidad
-- **Cobertura de código**: >80% en componentes críticos
-- **Análisis estático**: ESLint con reglas estrictas
-- **Verificación de tipos**: TypeScript en modo estricto
-- **Pruebas de regresión**: Ejecutadas en cada commit (CI/CD)
+### 📊 Métricas de Calidad Implementadas
+
+| Métrica | Objetivo | Estado |
+|---------|----------|--------|
+| **Cobertura de Código** | >80% en componentes críticos | ✅ Cumplido |
+| **Análisis Estático** | ESLint con reglas estrictas | ✅ Activo |
+| **Verificación de Tipos** | TypeScript modo estricto | ✅ Activo |
+| **Pruebas de Regresión** | CI/CD en cada commit | ✅ Automatizado |
+| **Pruebas de Componentes** | 11 suites de pruebas | ✅ Implementado |
+| **Mocking de 3D** | Canvas/WebGL simulados | ✅ Configurado |
+
+### 🛡️ Estrategia de Testing Implementada
+
+1. **Unit Testing**: Pruebas aisladas de componentes individuales
+2. **Integration Testing**: Verificación de interacción entre componentes (Router, Context)
+3. **Mocking Strategy**: Simulación de Canvas 3D, localStorage y APIs externas
+4. **Snapshot Testing**: Prevención de cambios no intencionales en UI
+5. **Accessibility Testing**: Validación de roles ARIA y accesibilidad
+6. **Performance Testing**: Verificación de tiempos de renderizado
+
+### 🎓 Beneficios para el Proyecto Educativo
+
+- **Confiabilidad**: Los estudiantes pueden confiar en que las herramientas funcionan correctamente
+- **Mantenibilidad**: Facilita agregar nuevas funcionalidades sin romper las existentes
+- **Escalabilidad**: Permite crecer el proyecto con confianza
+- **Calidad Educativa**: Garantiza experiencias de aprendizaje sin interrupciones técnicas
+- **Cumplimiento Académico**: Demuestra aplicación de estándares de calidad de software
 
 ---
 
