@@ -12,46 +12,46 @@ import * as THREE from "three";
 // Datos completos de los 32 departamentos de Colombia + Bogotá D.C.
 const departamentos = [
   // REGIÓN CARIBE
-  { id: 1, nombre: "La Guajira", capital: "Riohacha", población: "957.797", area: "20.848 km²", region: "Caribe", color: "#FF6B6B", position: [3, 4.5, 0], size: [1.2, 0.3, 1.5], dato: "Territorio del pueblo Wayúu, la comunidad indígena más grande de Colombia" },
-  { id: 2, nombre: "Cesar", capital: "Valledupar", población: "1.295.387", area: "22.905 km²", region: "Caribe", color: "#FF8E53", position: [2, 3.5, 0], size: [1.1, 0.3, 1.3], dato: "Cuna del vallenato, patrimonio inmaterial de la humanidad" },
-  { id: 3, nombre: "Magdalena", capital: "Santa Marta", población: "1.410.968", area: "23.188 km²", region: "Caribe", color: "#FFA07A", position: [1.5, 4, 0], size: [1.2, 0.3, 1.4], dato: "Posee la Sierra Nevada, la montaña costera más alta del mundo" },
-  { id: 4, nombre: "Atlántico", capital: "Barranquilla", población: "2.721.398", area: "3.388 km²", region: "Caribe", color: "#FFB347", position: [0.5, 4.2, 0], size: [0.7, 0.4, 0.8], dato: "Puerta de Oro de Colombia, importante puerto caribeño" },
-  { id: 5, nombre: "Bolívar", capital: "Cartagena", población: "2.229.054", area: "25.978 km²", region: "Caribe", color: "#FFCC33", position: [0, 3, 0], size: [1.5, 0.3, 1.6], dato: "Ciudad amurallada, Patrimonio de la Humanidad UNESCO" },
-  { id: 6, nombre: "Sucre", capital: "Sincelejo", población: "904.863", area: "10.917 km²", region: "Caribe", color: "#FFD700", position: [-0.5, 2.5, 0], size: [1, 0.3, 1], dato: "Tierra de las sabanas y del porro, ritmo tradicional" },
-  { id: 7, nombre: "Córdoba", capital: "Montería", población: "1.828.947", area: "25.020 km²", region: "Caribe", color: "#FFE066", position: [-1.5, 3, 0], size: [1.3, 0.3, 1.4], dato: "Gran productor ganadero y agrícola de Colombia" },
+  { id: 1, nombre: "La Guajira", capital: "Riohacha", población: "957.797", area: "20.848 km²", region: "Caribe", color: "#FF6B6B", position: [3, 8.5, 0], size: [1.2, 0.3, 1.5], dato: "Territorio del pueblo Wayúu, la comunidad indígena más grande de Colombia" },
+  { id: 2, nombre: "Cesar", capital: "Valledupar", población: "1.295.387", area: "22.905 km²", region: "Caribe", color: "#FF8E53", position: [2, 7.5, 0], size: [1.1, 0.3, 1.3], dato: "Cuna del vallenato, patrimonio inmaterial de la humanidad" },
+  { id: 3, nombre: "Magdalena", capital: "Santa Marta", población: "1.410.968", area: "23.188 km²", region: "Caribe", color: "#FFA07A", position: [1.5, 8, 0], size: [1.2, 0.3, 1.4], dato: "Posee la Sierra Nevada, la montaña costera más alta del mundo" },
+  { id: 4, nombre: "Atlántico", capital: "Barranquilla", población: "2.721.398", area: "3.388 km²", region: "Caribe", color: "#FFB347", position: [0.5, 8.2, 0], size: [0.7, 0.4, 0.8], dato: "Puerta de Oro de Colombia, importante puerto caribeño" },
+  { id: 5, nombre: "Bolívar", capital: "Cartagena", población: "2.229.054", area: "25.978 km²", region: "Caribe", color: "#FFCC33", position: [0, 7, 0], size: [1.5, 0.3, 1.6], dato: "Ciudad amurallada, Patrimonio de la Humanidad UNESCO" },
+  { id: 6, nombre: "Sucre", capital: "Sincelejo", población: "904.863", area: "10.917 km²", region: "Caribe", color: "#FFD700", position: [-0.5, 6.5, 0], size: [1, 0.3, 1], dato: "Tierra de las sabanas y del porro, ritmo tradicional" },
+  { id: 7, nombre: "Córdoba", capital: "Montería", población: "1.828.947", area: "25.020 km²", region: "Caribe", color: "#FFE066", position: [-1.5, 7, 0], size: [1.3, 0.3, 1.4], dato: "Gran productor ganadero y agrícola de Colombia" },
   
   // REGIÓN ANDINA
-  { id: 8, nombre: "Antioquia", capital: "Medellín", población: "6.677.930", area: "63.612 km²", region: "Andina", color: "#4ECDC4", position: [-2.5, 1.5, 0], size: [2, 0.5, 2], dato: "Departamento más poblado después de Bogotá, cuna de la cultura paisa" },
-  { id: 9, nombre: "Santander", capital: "Bucaramanga", población: "2.184.837", area: "30.537 km²", region: "Andina", color: "#45B7D1", position: [1, 2, 0], size: [1.5, 0.4, 1.5], dato: "Tierra de aventura, famoso por el Cañón del Chicamocha" },
-  { id: 10, nombre: "Norte de Santander", capital: "Cúcuta", población: "1.508.268", area: "21.658 km²", region: "Andina", color: "#5DADE2", position: [2, 2.5, 0], size: [1.2, 0.3, 1.3], dato: "Frontera con Venezuela, ciudad de la Batalla de Cúcuta" },
-  { id: 11, nombre: "Boyacá", capital: "Tunja", población: "1.242.954", area: "23.189 km²", region: "Andina", color: "#3498DB", position: [0.5, 1.5, 0], size: [1.4, 0.3, 1.4], dato: "Cuna de la independencia, Batalla del Puente de Boyacá" },
-  { id: 12, nombre: "Cundinamarca", capital: "Bogotá", población: "3.242.537", area: "24.210 km²", region: "Andina", color: "#2E86DE", position: [0, 0.5, 0], size: [1.5, 0.4, 1.5], dato: "Rodea a Bogotá D.C., diversidad de climas y paisajes" },
-  { id: 13, nombre: "Bogotá D.C.", capital: "Bogotá", población: "8.380.801", area: "1.587 km²", region: "Andina", color: "#1E3A8A", position: [0, 0, 0], size: [0.6, 0.6, 0.6], dato: "Capital de Colombia, centro político y económico del país" },
-  { id: 14, nombre: "Caldas", capital: "Manizales", población: "1.018.453", area: "7.888 km²", region: "Andina", color: "#6C5CE7", position: [-1.5, 0, 0], size: [0.9, 0.3, 1], dato: "Parte del Eje Cafetero, Paisaje Cultural Cafetero UNESCO" },
-  { id: 15, nombre: "Risaralda", capital: "Pereira", población: "1.007.525", area: "4.140 km²", region: "Andina", color: "#A29BFE", position: [-2, -0.5, 0], size: [0.8, 0.3, 0.9], dato: "Ciudad de las puertas abiertas, centro del Eje Cafetero" },
-  { id: 16, nombre: "Quindío", capital: "Armenia", población: "565.310", area: "1.845 km²", region: "Andina", color: "#B8B5FF", position: [-2.5, -1, 0], size: [0.6, 0.3, 0.7], dato: "Corazón del Eje Cafetero, Valle de Cocora con palmas de cera" },
-  { id: 17, nombre: "Tolima", capital: "Ibagué", población: "1.425.609", area: "23.562 km²", region: "Andina", color: "#8B7EC8", position: [-0.5, -0.5, 0], size: [1.4, 0.3, 1.5], dato: "Capital musical de Colombia, Nevado del Tolima" },
-  { id: 18, nombre: "Huila", capital: "Neiva", población: "1.009.548", area: "19.890 km²", region: "Andina", color: "#9B8FBF", position: [0.5, -1, 0], size: [1.3, 0.3, 1.3], dato: "Parque Arqueológico de San Agustín, Patrimonio UNESCO" },
+  { id: 8, nombre: "Antioquia", capital: "Medellín", población: "6.677.930", area: "63.612 km²", region: "Andina", color: "#4ECDC4", position: [-2.5, 5.5, 0], size: [2, 0.5, 2], dato: "Departamento más poblado después de Bogotá, cuna de la cultura paisa" },
+  { id: 9, nombre: "Santander", capital: "Bucaramanga", población: "2.184.837", area: "30.537 km²", region: "Andina", color: "#45B7D1", position: [1, 6, 0], size: [1.5, 0.4, 1.5], dato: "Tierra de aventura, famoso por el Cañón del Chicamocha" },
+  { id: 10, nombre: "Norte de Santander", capital: "Cúcuta", población: "1.508.268", area: "21.658 km²", region: "Andina", color: "#5DADE2", position: [2, 6.5, 0], size: [1.2, 0.3, 1.3], dato: "Frontera con Venezuela, ciudad de la Batalla de Cúcuta" },
+  { id: 11, nombre: "Boyacá", capital: "Tunja", población: "1.242.954", area: "23.189 km²", region: "Andina", color: "#3498DB", position: [0.5, 5.5, 0], size: [1.4, 0.3, 1.4], dato: "Cuna de la independencia, Batalla del Puente de Boyacá" },
+  { id: 12, nombre: "Cundinamarca", capital: "Bogotá", población: "3.242.537", area: "24.210 km²", region: "Andina", color: "#2E86DE", position: [0, 4.5, 0], size: [1.5, 0.4, 1.5], dato: "Rodea a Bogotá D.C., diversidad de climas y paisajes" },
+  { id: 13, nombre: "Bogotá D.C.", capital: "Bogotá", población: "8.380.801", area: "1.587 km²", region: "Andina", color: "#1E3A8A", position: [0, 4, 0], size: [0.6, 0.6, 0.6], dato: "Capital de Colombia, centro político y económico del país" },
+  { id: 14, nombre: "Caldas", capital: "Manizales", población: "1.018.453", area: "7.888 km²", region: "Andina", color: "#6C5CE7", position: [-1.5, 4, 0], size: [0.9, 0.3, 1], dato: "Parte del Eje Cafetero, Paisaje Cultural Cafetero UNESCO" },
+  { id: 15, nombre: "Risaralda", capital: "Pereira", población: "1.007.525", area: "4.140 km²", region: "Andina", color: "#A29BFE", position: [-2, 3.5, 0], size: [0.8, 0.3, 0.9], dato: "Ciudad de las puertas abiertas, centro del Eje Cafetero" },
+  { id: 16, nombre: "Quindío", capital: "Armenia", población: "565.310", area: "1.845 km²", region: "Andina", color: "#B8B5FF", position: [-2.5, 3, 0], size: [0.6, 0.3, 0.7], dato: "Corazón del Eje Cafetero, Valle de Cocora con palmas de cera" },
+  { id: 17, nombre: "Tolima", capital: "Ibagué", población: "1.425.609", area: "23.562 km²", region: "Andina", color: "#8B7EC8", position: [-0.5, 3.5, 0], size: [1.4, 0.3, 1.5], dato: "Capital musical de Colombia, Nevado del Tolima" },
+  { id: 18, nombre: "Huila", capital: "Neiva", población: "1.009.548", area: "19.890 km²", region: "Andina", color: "#9B8FBF", position: [0.5, 3, 0], size: [1.3, 0.3, 1.3], dato: "Parque Arqueológico de San Agustín, Patrimonio UNESCO" },
   
   // REGIÓN PACÍFICA
-  { id: 19, nombre: "Chocó", capital: "Quibdó", población: "534.826", area: "46.530 km²", region: "Pacífica", color: "#00D2D3", position: [-3.5, 2, 0], size: [1.6, 0.3, 1.8], dato: "Una de las regiones con mayor biodiversidad del planeta" },
-  { id: 20, nombre: "Valle del Cauca", capital: "Cali", población: "4.660.386", area: "22.140 km²", region: "Pacífica", color: "#11B5A5", position: [-3, -1.5, 0], size: [1.4, 0.4, 1.5], dato: "Capital de la salsa, ciudad más poblada del suroccidente" },
-  { id: 21, nombre: "Cauca", capital: "Popayán", población: "1.464.488", area: "29.308 km²", region: "Pacífica", color: "#0FB396", position: [-2, -2.5, 0], size: [1.5, 0.3, 1.6], dato: "Ciudad Blanca, famosa por su Semana Santa colonial" },
-  { id: 22, nombre: "Nariño", capital: "Pasto", población: "1.335.521", area: "33.268 km²", region: "Pacífica", color: "#0AA080", position: [-1, -3.5, 0], size: [1.6, 0.3, 1.5], dato: "Carnaval de Negros y Blancos, Patrimonio Cultural Inmaterial" },
+  { id: 19, nombre: "Chocó", capital: "Quibdó", población: "534.826", area: "46.530 km²", region: "Pacífica", color: "#00D2D3", position: [-3.5, 6, 0], size: [1.6, 0.3, 1.8], dato: "Una de las regiones con mayor biodiversidad del planeta" },
+  { id: 20, nombre: "Valle del Cauca", capital: "Cali", población: "4.660.386", area: "22.140 km²", region: "Pacífica", color: "#11B5A5", position: [-3, 2.5, 0], size: [1.4, 0.4, 1.5], dato: "Capital de la salsa, ciudad más poblada del suroccidente" },
+  { id: 21, nombre: "Cauca", capital: "Popayán", población: "1.464.488", area: "29.308 km²", region: "Pacífica", color: "#0FB396", position: [-2, 1.5, 0], size: [1.5, 0.3, 1.6], dato: "Ciudad Blanca, famosa por su Semana Santa colonial" },
+  { id: 22, nombre: "Nariño", capital: "Pasto", población: "1.335.521", area: "33.268 km²", region: "Pacífica", color: "#0AA080", position: [-1, 0.5, 0], size: [1.6, 0.3, 1.5], dato: "Carnaval de Negros y Blancos, Patrimonio Cultural Inmaterial" },
   
   // REGIÓN ORINOQUÍA
-  { id: 23, nombre: "Arauca", capital: "Arauca", población: "263.507", area: "23.818 km²", region: "Orinoquía", color: "#FEC868", position: [3, 1, 0], size: [1.3, 0.2, 1.2], dato: "Frontera con Venezuela, llanuras y cultura llanera" },
-  { id: 24, nombre: "Casanare", capital: "Yopal", población: "423.302", area: "44.640 km²", region: "Orinoquía", color: "#FDB750", position: [2, 0, 0], size: [1.6, 0.2, 1.5], dato: "Tierra de llaneros, importante producción petrolera" },
-  { id: 25, nombre: "Vichada", capital: "Puerto Carreño", población: "107.808", area: "100.242 km²", region: "Orinoquía", color: "#FDA638", position: [3.5, -0.5, 0], size: [2, 0.2, 1.8], dato: "Departamento más oriental, frontera con Venezuela" },
-  { id: 26, nombre: "Meta", capital: "Villavicencio", población: "1.059.972", area: "85.635 km²", region: "Orinoquía", color: "#FC9520", position: [1.5, -0.5, 0], size: [2, 0.3, 1.8], dato: "Puerta del Llano, importante centro agropecuario" },
+  { id: 23, nombre: "Arauca", capital: "Arauca", población: "263.507", area: "23.818 km²", region: "Orinoquía", color: "#FEC868", position: [3, 5, 0], size: [1.3, 0.2, 1.2], dato: "Frontera con Venezuela, llanuras y cultura llanera" },
+  { id: 24, nombre: "Casanare", capital: "Yopal", población: "423.302", area: "44.640 km²", region: "Orinoquía", color: "#FDB750", position: [2, 4, 0], size: [1.6, 0.2, 1.5], dato: "Tierra de llaneros, importante producción petrolera" },
+  { id: 25, nombre: "Vichada", capital: "Puerto Carreño", población: "107.808", area: "100.242 km²", region: "Orinoquía", color: "#FDA638", position: [3.5, 3.5, 0], size: [2, 0.2, 1.8], dato: "Departamento más oriental, frontera con Venezuela" },
+  { id: 26, nombre: "Meta", capital: "Villavicencio", población: "1.059.972", area: "85.635 km²", region: "Orinoquía", color: "#FC9520", position: [1.5, 3.5, 0], size: [2, 0.3, 1.8], dato: "Puerta del Llano, importante centro agropecuario" },
   
   // REGIÓN AMAZONÍA
-  { id: 27, nombre: "Guainía", capital: "Inírida", población: "48.114", area: "72.238 km²", region: "Amazonía", color: "#26DE81", position: [3, -2, 0], size: [1.8, 0.2, 1.6], dato: "Estrella Fluvial del Inírida, formaciones rocosas milenarias" },
-  { id: 28, nombre: "Guaviare", capital: "San José del Guaviare", población: "111.060", area: "53.460 km²", region: "Amazonía", color: "#20BF6B", position: [2, -2, 0], size: [1.6, 0.2, 1.5], dato: "Puerta de entrada al Amazonas, arte rupestre milenario" },
-  { id: 29, nombre: "Vaupés", capital: "Mitú", población: "48.144", area: "54.135 km²", region: "Amazonía", color: "#2ECC71", position: [2.5, -3, 0], size: [1.5, 0.2, 1.5], dato: "Gran diversidad indígena, selva amazónica virgen" },
-  { id: 30, nombre: "Caquetá", capital: "Florencia", población: "410.521", area: "88.965 km²", region: "Amazonía", color: "#27AE60", position: [0.5, -2.5, 0], size: [2, 0.2, 1.8], dato: "Transición entre Andes y Amazonía, gran biodiversidad" },
-  { id: 31, nombre: "Putumayo", capital: "Mocoa", población: "359.875", area: "24.885 km²", region: "Amazonía", color: "#229954", position: [-0.5, -3, 0], size: [1.4, 0.2, 1.4], dato: "Frontera con Ecuador, rica en petróleo y biodiversidad" },
-  { id: 32, nombre: "Amazonas", capital: "Leticia", población: "79.704", area: "109.665 km²", region: "Amazonía", color: "#1E8449", position: [1, -4, 0], size: [2.2, 0.2, 1.8], dato: "Departamento más austral, triple frontera (Brasil, Perú, Colombia)" },
+  { id: 27, nombre: "Guainía", capital: "Inírida", población: "48.114", area: "72.238 km²", region: "Amazonía", color: "#26DE81", position: [3, 2, 0], size: [1.8, 0.2, 1.6], dato: "Estrella Fluvial del Inírida, formaciones rocosas milenarias" },
+  { id: 28, nombre: "Guaviare", capital: "San José del Guaviare", población: "111.060", area: "53.460 km²", region: "Amazonía", color: "#20BF6B", position: [2, 2, 0], size: [1.6, 0.2, 1.5], dato: "Puerta de entrada al Amazonas, arte rupestre milenario" },
+  { id: 29, nombre: "Vaupés", capital: "Mitú", población: "48.144", area: "54.135 km²", region: "Amazonía", color: "#2ECC71", position: [2.5, 1, 0], size: [1.5, 0.2, 1.5], dato: "Gran diversidad indígena, selva amazónica virgen" },
+  { id: 30, nombre: "Caquetá", capital: "Florencia", población: "410.521", area: "88.965 km²", region: "Amazonía", color: "#27AE60", position: [0.5, 1.5, 0], size: [2, 0.2, 1.8], dato: "Transición entre Andes y Amazonía, gran biodiversidad" },
+  { id: 31, nombre: "Putumayo", capital: "Mocoa", población: "359.875", area: "24.885 km²", region: "Amazonía", color: "#229954", position: [-0.5, 1, 0], size: [1.4, 0.2, 1.4], dato: "Frontera con Ecuador, rica en petróleo y biodiversidad" },
+  { id: 32, nombre: "Amazonas", capital: "Leticia", población: "79.704", area: "109.665 km²", region: "Amazonía", color: "#1E8449", position: [1, 0, 0], size: [2.2, 0.2, 1.8], dato: "Departamento más austral, triple frontera (Brasil, Perú, Colombia)" },
 ];
 
 // Colores por región
@@ -164,7 +164,7 @@ function MapaScene({ onRegionClick, selectedRegion, hoveredRegion }: any) {
 
       {/* Título 3D principal */}
       <Text
-        position={[0, 6, 0]}
+        position={[0, 10, 0]}
         fontSize={1.2}
         color="#FBBF24"
         anchorX="center"
@@ -177,7 +177,7 @@ function MapaScene({ onRegionClick, selectedRegion, hoveredRegion }: any) {
 
       {/* Subtítulo */}
       <Text
-        position={[0, 5.2, 0]}
+        position={[0, 9.2, 0]}
         fontSize={0.4}
         color="#FFFFFF"
         anchorX="center"
@@ -188,7 +188,7 @@ function MapaScene({ onRegionClick, selectedRegion, hoveredRegion }: any) {
 
       {/* Leyenda de regiones */}
       {Object.entries(regionColors).map(([region, color], index) => (
-        <group key={region} position={[-8, 4.5 - index * 0.7, 0]}>
+        <group key={region} position={[-8, 8.5 - index * 0.7, 0]}>
           <mesh position={[0, 0, 0]}>
             <boxGeometry args={[0.3, 0.3, 0.3]} />
             <meshStandardMaterial color={color} />
